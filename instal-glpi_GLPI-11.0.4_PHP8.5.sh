@@ -1,18 +1,18 @@
 #!/bin/bash
 
 # =====================================================
-# Script installation GLPI 11.0.2 sur Debian 13
+# Script installation GLPI 11.0.4 sur Debian 13
 # Nginx + PHP FPM + HTTPS signe par CA interne MyCA
 # =====================================================
 
 clear
 echo "====================================================="
-echo "  Script installation GLPI 11.0.2 - Debian 13"
+echo "  Script installation GLPI 11.0.4 - Debian 13"
 echo "====================================================="
 echo
 echo " - Nginx + PHP FPM"
 echo " - MariaDB"
-echo " - GLPI 11.0.2 dans /var/www/html/glpi"
+echo " - GLPI 11.0.4 dans /var/www/html/glpi"
 echo " - HTTPS avec certificat signe par CA interne MyCA"
 echo " - Possibilite d utiliser votre propre CA myCA"
 echo " - Redirection HTTP (80) vers HTTPS (443)"
@@ -103,12 +103,12 @@ clear
 echo "[7/16] Preparation de /var/www/html"
 rm -f /var/www/html/index.nginx-debian.html
 
-# ---------- 8) Telechargement GLPI 11.0.2 ----------
+# ---------- 8) Telechargement GLPI 11.0.4 ----------
 clear
-echo "[8/16] Telechargement de GLPI 11.0.2 et installation dans /var/www/html/glpi"
+echo "[8/16] Telechargement de GLPI 11.0.4 et installation dans /var/www/html/glpi"
 cd /tmp
-wget -O glpi-11.0.2.tgz https://github.com/glpi-project/glpi/releases/download/11.0.2/glpi-11.0.2.tgz
-tar -xvzf glpi-11.0.2.tgz
+wget -O glpi-11.0.4.tgz https://github.com/glpi-project/glpi/releases/download/11.0.4/glpi-11.0.4.tgz
+tar -xvzf glpi-11.0.4.tgz
 
 rm -rf /var/www/html/glpi
 mkdir -p /var/www/html/glpi
@@ -368,7 +368,7 @@ systemctl reload nginx
 # ---------- 16) Recapitulatif ----------
 clear
 echo "====================================================="
-echo " Installation GLPI 11.0.2 terminee"
+echo " Installation GLPI 11.0.4 terminee"
 echo "====================================================="
 echo
 echo " URL : https://${GLPI_HOST}/"
